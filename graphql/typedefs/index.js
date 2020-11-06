@@ -14,9 +14,10 @@ const typeDefs = gql`
     helloWorld: String
   }
 
-  # type Mutation {
-  #   # All mutations
-  # }
+  type Mutation {
+    # All mutations
+    helloWorld: String
+  }
 
   # Common
   # Types
