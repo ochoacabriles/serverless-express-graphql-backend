@@ -16,7 +16,9 @@ const typeDefs = gql`
 
   type Mutation {
     # All mutations
-    helloWorld: String
+    # @auth means it'll return unauthorized
+    # if a valid token is not given in the authorization header
+    helloWorld: String @auth
   }
 
   # Common
