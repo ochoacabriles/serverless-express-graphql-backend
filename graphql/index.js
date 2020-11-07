@@ -22,13 +22,11 @@ const server = new ApolloServer({
     // If user is logged, the token will be in authorization header
     let token;
 
-    if (!token) {
-      const { authorization: authorizationHeader } = req.headers;
-      if (authorizationHeader) {
-        const headerArray = authorizationHeader.split(' ');
-        if (headerArray[0] === 'Bearer') {
-          token = headerArray[1];
-        }
+    const { authorization: authorizationHeader } = req.headers;
+    if (authorizationHeader) {
+      const headerArray = authorizationHeader.split(' ');
+      if (headerArray[0] === 'Bearer') {
+        token = headerArray[1];
       }
     }
 
@@ -36,7 +34,8 @@ const server = new ApolloServer({
     // or any other information stored in the token
     let userId;
     if (token) {
-      const userId = 'userId';
+      // Remove this line to read the token
+      userId = 'userId';
       // const secret = res.app.get('jwtSecret');
       // ({ id: userId } = jwt.verify(token, secret));
     }
